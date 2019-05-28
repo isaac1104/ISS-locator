@@ -11,9 +11,7 @@ const issDataReducer = (state = INITIAL_STATE, { type, payload }) => {
     case FETCH_ISS_DATA_REQUEST:
       return {
         ...state,
-        is_fetching: payload,
-        data: [],
-        error: null
+        is_fetching: payload
       };
     case FETCH_ISS_DATA_SUCCESS:
       return {

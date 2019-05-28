@@ -18,7 +18,7 @@ class PigeonMap extends Component {
     this.setState({ is_loading: false });
     setInterval(() => {
       this.props.fetchIssData();
-    }, 2000);
+    }, 1000);
   }
 
   renderMarker() {
@@ -36,7 +36,7 @@ class PigeonMap extends Component {
         <>
           <Map
             metaWheelZoom
-            zoom={3.5}
+            zoom={4}
             center={[data.latitude, data.longitude]}
           >
             {this.renderMarker()}
