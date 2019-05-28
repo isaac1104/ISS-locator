@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchIssData } from '../../actions';
 import Map from 'pigeon-maps';
-import Marker from 'pigeon-marker';
+import Overlay from 'pigeon-overlay';
 import styles from './PigeonMap.module.css';
 import Loader from '../Loader/Loader';
 import LocationData from '../LocationData/LocationData';
+import satellite from '../../assets/satellite.png';
 
 class PigeonMap extends Component {
   state = {
@@ -21,9 +22,13 @@ class PigeonMap extends Component {
     }, 1000);
   }
 
-  renderMarker() {
+  renderOverlay() {
     const { latitude, longitude } = this.props.iss_data.data;
-    return <Marker anchor={[latitude, longitude]} />;
+    return (
+      <Overlay anchor={[latitude, longitude]} offset={[60, 39]}>
+        <img src={satellite} alt='satellite' />
+      </Overlay>
+    );
   }
 
   renderMap() {
@@ -42,7 +47,7 @@ class PigeonMap extends Component {
             animate={false}
             center={[data.latitude, data.longitude]}
           >
-            {this.renderMarker()}
+            {this.renderOverlay()}
           </Map>
           <LocationData />
         </>
