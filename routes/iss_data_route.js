@@ -1,9 +1,10 @@
 const axios = require('axios');
+const keys = require('../config/keys');
 
 module.exports = app => {
   app.get('/api/iss_data', async (req, res) => {
     try {
-      const request = await axios.get('https://api.wheretheiss.at/v1/satellites/25544');
+      const request = await axios.get(keys.issApiUrl);
       const { data } = request;
       res.status(200).send(data);
     } catch (e) {
