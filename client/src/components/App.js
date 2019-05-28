@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Typography from '@material-ui/core/Typography';
-import { fetchIssData } from './actions';
+import { fetchIssData } from '../actions';
 import Loader from './Loader/Loader';
 
 class App extends Component {
