@@ -5,6 +5,7 @@ import Map from 'pigeon-maps';
 import Marker from 'pigeon-marker';
 import styles from './PigeonMap.module.css';
 import Loader from '../Loader/Loader';
+import LocationData from '../LocationData/LocationData';
 
 class PigeonMap extends Component {
   state = {
@@ -32,20 +33,22 @@ class PigeonMap extends Component {
     }
     if (data) {
       return (
-        <Map
-          metaWheelZoom
-          zoom={3.5}
-          center={[data.latitude, data.longitude]}
-        >
-          {this.renderMarker()}
-        </Map>
+        <>
+          <Map
+            metaWheelZoom
+            zoom={3.5}
+            center={[data.latitude, data.longitude]}
+          >
+            {this.renderMarker()}
+          </Map>
+          <LocationData />
+        </>
       );
     }
     return null;
   }
 
   render() {
-    console.log(this.props.iss_data);
     return (
       <div className={styles.MapContainer}>
         {this.renderMap()}
