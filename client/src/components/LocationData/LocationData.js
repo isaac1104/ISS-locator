@@ -24,9 +24,12 @@ class LocationData extends Component {
         <Typography color='textSecondary'>Visibility</Typography>
         <Divider />
         <Typography variant='body2' component='p'>{visibility}</Typography>
-        <Typography color='textSecondary'>Location</Typography>
+        <Typography color='textSecondary'>Latitude</Typography>
         <Divider />
-        <Typography variant='body2' component='p'>{latitude} | {longitude}</Typography>
+        <Typography variant='body2' component='p'>{latitude}</Typography>
+        <Typography color='textSecondary'>Longitude</Typography>
+        <Divider />
+        <Typography variant='body2' component='p'>{longitude}</Typography>
         <Typography color='textSecondary'>Velocity (km/h)</Typography>
         <Divider />
         <Typography variant='body2' component='p'>{velocity}</Typography>

@@ -2,5 +2,8 @@
   position: absolute;
   top: 0;
   right: 0;
-  background: transparent;
+  background: #f8f4f0;
+  padding: 2em !important;
+  width: 12em;
+  opacity: 0.9;
 }
