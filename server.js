@@ -8,14 +8,14 @@ const app = express();
 app.use(express.json());
 app.use(helmet());
 
+require('./routes/iss_data_route')(app);
+
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
-
-require('./routes/iss_data_route')(app);
 
 app.listen(PORT, () => {
   console.log(`Server on PORT: ${PORT}`);
