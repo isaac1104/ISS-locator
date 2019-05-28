@@ -41,7 +41,7 @@ class PigeonMap extends Component {
         <>
           <Map
             metaWheelZoom
-            zoom={4.3}
+            zoom={5}
             minZoom={4}
             maxZoom={4}
             animate={false}
