@@ -36,7 +36,10 @@ class PigeonMap extends Component {
         <>
           <Map
             metaWheelZoom
-            zoom={4}
+            zoom={4.3}
+            minZoom={4}
+            maxZoom={4}
+            animate={false}
             center={[data.latitude, data.longitude]}
           >
             {this.renderMarker()}
