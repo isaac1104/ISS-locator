@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
+import issDataReducer from './iss_data_reducer';
 
 const rootReducer = combineReducers({
-  state: (state = {}) => state
+  iss_data: issDataReducer
 });
 
 export default rootReducer;
