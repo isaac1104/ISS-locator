@@ -14,6 +14,8 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
+require('./routes/iss_data_route')(app);
+
 app.listen(PORT, () => {
   console.log(`Server on PORT: ${PORT}`);
 });
