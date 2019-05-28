@@ -34,7 +34,7 @@ class LocationData extends Component {
         <Divider />
         <Typography variant='body2' component='p'>{velocity}</Typography>
       </CardContent>
-    )
+    );
   }
 
   render() {
