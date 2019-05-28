@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Typography from '@material-ui/core/Typography';
 import { fetchIssData } from '../actions';
 import Loader from './Loader/Loader';
+import PigeonMap from './PigeonMap/PigeonMap';
 
 class App extends Component {
   componentDidMount() {
@@ -15,7 +16,12 @@ class App extends Component {
       return <Loader />;
     }
     if (data) {
-      return <Typography variant='h5' gutterBottom>{data.latitude}, {data.longitude}</Typography>;
+      return (
+        <>
+          <Typography variant='h5' gutterBottom>{data.latitude}, {data.longitude}</Typography>
+          <PigeonMap />
+        </>
+      )
     }
 
     return null;
