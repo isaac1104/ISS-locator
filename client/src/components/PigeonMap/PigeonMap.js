@@ -44,7 +44,7 @@ class PigeonMap extends Component {
         <>
           <Map
             metaWheelZoom
-            zoom={5}
+            zoom={4.5}
             defaultCenter={[data.latitude, data.longitude]}
           >
             {this.renderOverlay()}
