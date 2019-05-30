@@ -28,6 +28,7 @@ class PigeonMap extends Component {
       <Overlay
         anchor={[latitude, longitude]}
         className={styles.Overlay}
+        offset={[60, 50]}
       >
         <img src={satellite} alt='satellite' className={styles.ISSIcon} />
       </Overlay>
