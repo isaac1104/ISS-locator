@@ -25,7 +25,10 @@ class PigeonMap extends Component {
   renderOverlay() {
     const { latitude, longitude } = this.props.iss_data.data;
     return (
-      <Overlay anchor={[latitude, longitude]} offset={[60, 39]}>
+      <Overlay
+        anchor={[latitude, longitude]}
+        className={styles.Overlay}
+      >
         <img src={satellite} alt='satellite' />
       </Overlay>
     );
@@ -42,9 +45,6 @@ class PigeonMap extends Component {
           <Map
             metaWheelZoom
             zoom={5}
-            animate={false}
-            defaultWidth={window.innerWidth}
-            defaultHeight={window.innerHeight}
             defaultCenter={[data.latitude, data.longitude]}
           >
             {this.renderOverlay()}
