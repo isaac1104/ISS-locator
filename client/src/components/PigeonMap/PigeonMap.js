@@ -45,8 +45,12 @@ class PigeonMap extends Component {
         <>
           <Map
             metaWheelZoom
-            zoom={4.5}
+            zoom={5}
             defaultCenter={[data.latitude, data.longitude]}
+            provider={(x, y, z) => {
+              const s = String.fromCharCode(97 + (x + y + z) % 3);
+              return `https://${s}.tile.openstreetmap.org/${z}/${x}/${y}.png`;
+            }}
           >
             {this.renderOverlay()}
           </Map>
