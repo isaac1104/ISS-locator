@@ -5,6 +5,7 @@ import Map from 'pigeon-maps';
 import Overlay from 'pigeon-overlay';
 import styles from './PigeonMap.module.css';
 import Loader from '../Loader/Loader';
+import CenterButton from '../CenterButton/CenterButton';
 import LocationData from '../LocationData/LocationData';
 import satellite from '../../assets/satellite.png';
 
@@ -55,6 +56,7 @@ class PigeonMap extends Component {
             {this.renderOverlay()}
           </Map>
           <LocationData />
+          <CenterButton />
         </>
       );
     }
