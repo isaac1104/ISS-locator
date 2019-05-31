@@ -8,16 +8,16 @@ import { toggleCheckbox } from '../../actions';
 
 class CenterButton extends Component {
   render() {
-    console.log(this.props.toggle_checkbox);
+    const { toggle_checkbox: { checked }, toggleCheckbox } = this.props;
+
     return (
       <FormControl className={styles.CenterButton}>
         <FormControlLabel
           label='CENTER'
           control={
             <Checkbox
-              checked={this.props.toggle_checkbox.checked}
-              onChange={this.props.toggleCheckbox}
-              value='checkedB'
+              checked={checked}
+              onChange={toggleCheckbox}
               color='primary'
               label='center'
             />
