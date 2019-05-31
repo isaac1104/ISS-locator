@@ -37,7 +37,7 @@ class PigeonMap extends Component {
   }
 
   renderMap() {
-    const { data } = this.props.iss_data;
+    const { iss_data: { data }, toggle_checkbox: { checked } } = this.props;
     if (this.state.is_loading) {
       return <Loader />;
     }
@@ -48,6 +48,7 @@ class PigeonMap extends Component {
             metaWheelZoom
             zoom={5}
             defaultCenter={[data.latitude, data.longitude]}
+            center={checked ? [data.latitude, data.longitude] : []}
             provider={(x, y, z) => {
               const s = String.fromCharCode(97 + (x + y + z) % 3);
               return `https://${s}.tile.openstreetmap.org/${z}/${x}/${y}.png`;
@@ -72,9 +73,10 @@ class PigeonMap extends Component {
   }
 }
 
-const mapStateToProps = ({ iss_data }) => {
+const mapStateToProps = ({ iss_data, toggle_checkbox }) => {
   return {
-    iss_data
+    iss_data,
+    toggle_checkbox
   };
 };
 
