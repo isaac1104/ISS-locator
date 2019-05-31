@@ -1,28 +1,22 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import styles from './CenterButton.module.css';
+import { toggleCheckbox } from '../../actions';
 
 class CenterButton extends Component {
-  state = {
-    checked: true
-  }
-
-  handleChange = event => {
-    this.setState({ checked: !this.state.checked });
-    console.log(this.state.checked);
-  }
-
   render() {
+    console.log(this.props.toggle_checkbox);
     return (
       <FormControl className={styles.CenterButton}>
         <FormControlLabel
           label='CENTER'
           control={
             <Checkbox
-              checked={this.state.checked}
-              onChange={event => this.handleChange(event)}
+              checked={this.props.toggle_checkbox.checked}
+              onChange={this.props.toggleCheckbox}
               value='checkedB'
               color='primary'
               label='center'
@@ -34,4 +28,10 @@ class CenterButton extends Component {
   }
 }
 
-export default CenterButton;
+const mapStateToProps = ({ toggle_checkbox }) => {
+  return {
+    toggle_checkbox
+  };
+};
+
+export default connect(mapStateToProps, { toggleCheckbox })(CenterButton);

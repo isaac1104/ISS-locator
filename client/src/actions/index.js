@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_ISS_DATA_REQUEST, FETCH_ISS_DATA_SUCCESS, FETCH_ISS_DATA_FAIL, TOGGLE_CENTER_CHECKBOX } from './types';
+import { FETCH_ISS_DATA_REQUEST, FETCH_ISS_DATA_SUCCESS, FETCH_ISS_DATA_FAIL, TOGGLE_CHECKBOX } from './types';
 
 const fetchIssDataRequest = () => ({
   type: FETCH_ISS_DATA_REQUEST,
@@ -27,6 +27,6 @@ export const fetchIssData = () => async dispatch => {
   }
 };
 
-export const toggleCenterCheckbox = () => ({
-  type: TOGGLE_CENTER_CHECKBOX
+export const toggleCheckbox = () => ({
+  type: TOGGLE_CHECKBOX
 });
