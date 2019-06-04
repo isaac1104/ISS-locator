@@ -18,9 +18,12 @@ class PigeonMap extends Component {
     this.setState({ is_loading: true });
     await this.props.fetchIssData();
     this.setState({ is_loading: false });
-    setInterval(() => {
-      this.props.fetchIssData();
-    }, 1000);
+    this.fetchRealtimeData(this.props.fetchIssData, 1000);
+  }
+
+  fetchRealtimeData = async (fn, ms) => {
+    await fn();
+    setTimeout(this.fetchRealtimeData(fn, ms), ms);
   }
 
   renderOverlay() {
